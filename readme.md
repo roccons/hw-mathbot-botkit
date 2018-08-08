@@ -5,7 +5,7 @@ in a funny way.
 
 The Mathbot is being created using [Botkit](https://botkit.ai/).
 
-There is also a version being developed using Botpress: [https://github.com/roccons/hw-mathbot-botpress](https://github.com/roccons/hw-mathbot-botpress) 
+There is also a version of this bot using Botpress: [https://github.com/roccons/hw-mathbot-botpress](https://github.com/roccons/hw-mathbot-botpress) 
 
 ## Instalación
 
