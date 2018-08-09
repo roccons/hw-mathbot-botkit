@@ -6,7 +6,7 @@ module.exports = function (controller) {
     controller.on('hello', function (bot, message) {
         bot.reply(message, 'Bienvenid@');
         bot.reply(message, 'Soy el bot matemático y estoy aquí para ayudarte a aprender las tablas de multiplicar');
-        bot.reply(message, '¿Cuá tabla quieres practicar?');
+        bot.reply(message, '¿CuáNto es 2 x 2?');
 
     })
 
@@ -15,7 +15,7 @@ module.exports = function (controller) {
      */
     controller.on('welcome_back', function (bot, message) {
         bot.reply(message, 'Hola de nuevo.');
-        bot.reply(message, '¿Cuá tabla quieres practicar?');
+        bot.reply(message, '¿Cuáto es 2 x 2?');
     });
 
     /**

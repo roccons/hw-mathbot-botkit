@@ -5,7 +5,7 @@ module.exports = controller => {
     ], 'message_received', (bot, message) => {
         
         bot.reply(message, {
-            text: 'Ps vete!',
+            text: '¡Adios!',
             typingDelay: 500
         })
     })
