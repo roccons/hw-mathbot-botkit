@@ -1,49 +1,51 @@
 module.exports = function (controller) {
 
-    controller.hears(['hola', 'hi'], 'message_received', function (bot, message) {
+    controller.hears([
+        'la del'
+    ], (bot, message) => {
 
-        bot.createConversation(message, function (err, convo) {
-    
-            convo.addMessage({
-                text: '¡Perfecto! Practiquemos la tabla del ' 
-                    + controller.storage.get(message.user, function (err, user_data) {
-                        console.log(user_data)
-                    })
-            }, 'table_question')
+        bot.reply(message, 'hola')
+
+        bot.startConversation(message, (err, conversation) => {
 
             convo.addMessage({
-                text: 'Ps vete'
-            }, 'finish')
+                text: 'Perfecto!, practiquemos eso...'
+            }, 'start_table')
 
-            /**
-             * 
-             */
-            convo.addQuestion('¿Cuál tabla quieres practicar?', [
+            convo.addMessage({
+                text: 'Cuando quieras continuar me avisas'
+            }, 'finish_table')
+
+            convo.addMessage({
+                text: 'Excelente',
+            }, 'good_answer')
+
+            convo.addMessage({
+                text: 'No!'
+            }, 'bad_answer')
+
+            convo.addQuestion('¿Cuánto es 2 x 2?', [
                 {
-                    pattern: /del (\d+)/i,
-                    callback: function (response, convo) {
-                        controller.storage.users.save({
-                            id: message.user,
-                            tableNumber: response.text
-                        })
-                        convo.gotoThread('table_question');
+                    pattern: 'no se',
+                    callback (response, convo) {
+                        convo.gotoThread('bad_answer')
                     }
                 },
                 {
-                    pattern: /adios/i,
-                    callback: function (response, convo) {
-                        convo.gotoThread('finish');
+                    pattern: /(\d+)/i,
+                    callback (response, convo) {
+                        convo.gotoThread('good_answer')
                     }
                 },
                 {
                     default: true,
-                    callback: function (response, convo) {
-                        convo.gotoThread('bad_response')
+                    callback (response, convo) {
+                        convo.gotoThread('finish_table')
                     }
                 }
-            ], {}, 'default');
-    
-            convo.activate();
+            ], {}, 'default')
+
+            convo.activate()
         })
     })
 }

@@ -1,6 +1,6 @@
-module.exports = function(controller) {
+module.exports = controller => {
 
-  controller.hears('quick replies','message_received', function(bot, message) {
+  controller.hears('quick replies','message_received', (bot, message) => {
 
     bot.reply(message, {
         text: 'Look, quick replies!',
@@ -14,9 +14,8 @@ module.exports = function(controller) {
                 payload: 'test'
             },
         ]
-      },function() {});
+      },() => {})
 
 
-      });
-
+    })
 }

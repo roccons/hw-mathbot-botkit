@@ -11,7 +11,7 @@ and causes it to immediately quit any ongoing conversation.
 module.exports = function(controller) {
 
     // controller.middleware.receive.use(function(bot, message, next) {
-    //
+    
     //     if (message.text && message.text.match(bot.utterances.quit)) {
     //         bot.findConversation(message, function(convo) {
     //             if (convo) {
@@ -26,7 +26,7 @@ module.exports = function(controller) {
     //     } else {
     //         next();
     //     }
-    //
+    
     // });
 
 }
