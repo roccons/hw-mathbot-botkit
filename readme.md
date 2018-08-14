@@ -5,7 +5,10 @@ in a funny way.
 
 The Mathbot is being created using [Botkit](https://botkit.ai/).
 
-There is also a version of this bot using Botpress: [https://github.com/roccons/hw-mathbot-botpress](https://github.com/roccons/hw-mathbot-botpress) 
+This is a basic and incomplete version of the bot. There is a unresolved error for some users
+and you can test a single question. 
+
+There is also a version more complete of this bot using Botpress: [https://github.com/roccons/hw-mathbot-botpress](https://github.com/roccons/hw-mathbot-botpress) 
 
 ## Instalación
 

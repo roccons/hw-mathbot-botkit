@@ -1,13 +1,17 @@
-module.exports = function (controller) {
+module.exports = controller => {
 
-    controller.hears('4',  'message_received', function (bot, message) {
+    controller.hears('4',  'message_received', (bot, message) => {
         bot.reply(message, '¡Muy bien!')
     })
 
-    controller.hears(/\d+/i,  'message_received', function (bot, message) {
+    controller.hears(/\d+/i,  'message_received', (bot, message) => {
         if (message.text != '4') {
             bot.reply(message, 'Intenta de nuevo')
         }
+    })
+
+    controller.hears(/\w+/i, ' message_received', (bot, message) => {
+        bot.reply(message, 'Esa no es una respuesta válida')
     })
 
     controller.hears([
