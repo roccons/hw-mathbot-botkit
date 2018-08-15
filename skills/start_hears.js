@@ -7,7 +7,7 @@ module.exports = function (controller) {
         bot.startConversation(message, (err, convo) => {
             convo.say('Hola')
             convo.say('Soy el bot matemático y estoy aquí para ayudarte a aprender las tablas de multiplicar')
-            convo.say('¿Cuáto es 2 x 2?')
+            convo.say('¿Cuánto es 2 x 2?')
         })
     })
 
@@ -18,7 +18,7 @@ module.exports = function (controller) {
         bot.startConversation(message, (err, convo) => {
             convo.say('Hola')
             convo.say('Soy el bot matemático y estoy aquí para ayudarte a aprender las tablas de multiplicar')
-            convo.say('¿Cuáto es 2 x 2?');
+            convo.say('¿Cuánto es 2 x 2?');
         })
     });
 
